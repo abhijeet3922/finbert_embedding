@@ -28,7 +28,7 @@ class FinbertEmbedding(object):
         if model_path is not None:
             self.model_path = model_path
         else:
-            self.model_path = Path.cwd().parent/'finbertTRC2'
+            self.model_path = Path.cwd()/'model'
 
         self.tokens = ""
         self.sentence_tokens = ""
