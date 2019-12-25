@@ -2,7 +2,6 @@ import os
 import torch
 import logging
 from pathlib import Path
-from scipy.spatial.distance import cosine
 from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM
 
 __author__ = 'Abhijeet Kumar'
