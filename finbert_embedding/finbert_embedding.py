@@ -1,7 +1,8 @@
 import os
 import torch
 import logging
-from pathlib import Path
+import downloader
+import tensorflow as tf
 from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM
 
 __author__ = 'Abhijeet Kumar'
@@ -27,7 +28,7 @@ class FinbertEmbedding(object):
         if model_path is not None:
             self.model_path = model_path
         else:
-            self.model_path = Path.cwd()/'model'
+            self.model_path = downloader.get_Finbert('dropbox')
 
         self.tokens = ""
         self.sentence_tokens = ""
