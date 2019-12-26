@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="finbert_embedding",
-    packages=['finbert_embedding','finbert_embedding.model'],
-    version="0.0.1",
+    packages=['finbert_embedding'],
+    version="0.0.2",
     author="Abhijeet Kumar",
     author_email="abhijeetchar@gmail.com",
     description="Embeddings from Financial BERT",
