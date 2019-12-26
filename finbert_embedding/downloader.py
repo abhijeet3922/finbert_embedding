@@ -51,8 +51,8 @@ def get_Finbert(location):
                 origin="https://www.dropbox.com/s/6oeprcqae7tc459/fin_model.tar.gz?dl=1")
             if not os.path.exists(model_path/"pytorch_model.bin"):
                 print("Extracting finbert model tar.gz")
-                tf = tarfile.open(model_path/"fin_model.tar.gz")
-                tf.extractall()
+                tar = tarfile.open(model_path/"fin_model.tar.gz")
+                tar.extractall()
 
     if location == 'google drive':
         if not os.path.isdir(model_path):
@@ -67,7 +67,7 @@ def get_Finbert(location):
                 download_file_from_google_drive(fileid, model_path/"fin_model.tar.gz")
             if not os.path.exists(model_path/"pytorch_model.bin"):
                 print("Extracting finbert model tar.gz")
-                tf = tarfile.open(model_path/"fin_model.tar.gz")
-                tf.extractall()
+                tar = tarfile.open(model_path/"fin_model.tar.gz")
+                tar.extractall()
 
     return model_path
