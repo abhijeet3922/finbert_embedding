@@ -35,7 +35,7 @@ def save_response_content(response, destination):
 
 def get_Finbert(location):
 
-    model_path = Path.cwd()/"fin_model"
+    model_path = Path.cwd()/'fin_model'
 
     if location == 'dropbox':
         if not os.path.isdir(model_path):
@@ -71,3 +71,7 @@ def get_Finbert(location):
                 tar.extractall()
 
     return model_path
+
+
+if __name__ == "__main__":
+    print("package from downloading finbert model")

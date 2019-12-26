@@ -4,9 +4,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="finbert_embedding",
+    name="finbert-embedding",
     packages=['finbert_embedding'],
-    version="0.0.2",
+    version="0.1.1",
     author="Abhijeet Kumar",
     author_email="abhijeetchar@gmail.com",
     description="Embeddings from Financial BERT",
@@ -17,6 +17,7 @@ setuptools.setup(
     install_requires=[
           'torch==1.1.0',
           'pytorch-pretrained-bert==0.6.2',
+          'tensorflow',
       ],
 
     classifiers=[

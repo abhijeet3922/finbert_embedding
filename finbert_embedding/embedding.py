@@ -1,8 +1,8 @@
 import os
 import torch
 import logging
-import downloader
 import tensorflow as tf
+from finbert_embedding import downloader
 from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM
 
 __author__ = 'Abhijeet Kumar'
