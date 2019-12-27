@@ -3,7 +3,7 @@ Token and sentence level embeddings from FinBERT model (Financial Domain).
 
 [BERT](https://arxiv.org/abs/1810.04805), published by Google, is conceptually simple and empirically powerful as it obtained state-of-the-art results on eleven natural language processing tasks.  
 
-The objective of this project is to obtain the word or sentence embeddings from FinBERT, pre-trained model by Dogu Tan Araci (University of Amsterdam). FinBERT, which is a BERT language model further trained on Financial news articles for adapting financial domain. It achieved the state-of-the-art on FiQA sentiment scoring and Financial PhraseBank dataset. Paper [here](https://arxiv.org/abs/1908.10063).
+The objective of this project is to obtain the word or sentence embeddings from [FinBERT](https://github.com/ProsusAI/finBERT), pre-trained model by Dogu Tan Araci (University of Amsterdam). FinBERT, which is a BERT language model further trained on Financial news articles for adapting financial domain. It achieved the state-of-the-art on FiQA sentiment scoring and Financial PhraseBank dataset. Paper [here](https://arxiv.org/abs/1908.10063).
 
 Instead of building and do fine-tuning for an end-to-end NLP model, You can directly utilize word embeddings from Financial BERT to build NLP models for various downstream tasks eg. Financial text classification, Text clustering, Extractive summarization or Entity extraction etc.
 
