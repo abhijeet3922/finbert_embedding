@@ -81,11 +81,11 @@ from scipy.spatial.distance import cosine
 diff_bank = 1 - cosine(word_embeddings[9], word_embeddings[18])
 same_bank = 1 - cosine(word_embeddings[9], word_embeddings[5])
 
-print('Vector similarity for  similar  meanings:  %.2f' % same_bank)
-print('Vector similarity for different meanings:  %.2f' % diff_bank)
+print('Vector similarity for similar bank meanings (bank vault & bank robber):  %.2f' % same_bank)
+print('Vector similarity for different bank meanings (bank robber & river bank):  %.2f' % diff_bank)
 
-# Vector similarity for  *similar*  bank meanings (bank vault & bank robber):  0.92
-# Vector similarity for *different* bank meanings (bank robber & river bank):  0.64
+# Vector similarity for similar bank meanings (bank vault & bank robber):  0.92
+# Vector similarity for different bank meanings (bank robber & river bank):  0.64
 ```
 
 ### Warning
