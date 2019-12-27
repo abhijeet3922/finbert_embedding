@@ -91,9 +91,9 @@ print('Vector similarity for different meanings:  %.2f' % diff_bank)
 ### Warning
 
 According to BERT author Jacob Devlin:
-```I'm not sure what these vectors are, since BERT does not generate meaningful sentence vectors. It seems that this is is doing average pooling over the word tokens to get a sentence vector, but we never suggested that this will generate meaningful sentence representations. And even if they are decent representations when fed into a DNN trained for a downstream task, it doesn't mean that they will be meaningful in terms of cosine distance. (Since cosine distance is a linear space where all dimensions are weighted equally).```
+```I'm not sure what these vectors are, since BERT does not generate meaningful sentence vectors. It seems that this is doing average pooling over the word tokens to get a sentence vector, but we never suggested that this will generate meaningful sentence representations. And even if they are decent representations when fed into a DNN trained for a downstream task, it doesn't mean that they will be meaningful in terms of cosine distance. (Since cosine distance is a linear space where all dimensions are weighted equally).```
 
-Word/Sentence Embeddings gives great results in training downstream application like sentiment classification or text/document classification.
+However, the [CLS] token does become meaningful if the model has been fine-tuned, where the last hidden layer of this token is used as the “sentence vector” for sequence classification. Word/Sentence Embeddings gives great results in training downstream application like sentiment classification or text/document classification.
 
 ## To Do (Next Version)
 
