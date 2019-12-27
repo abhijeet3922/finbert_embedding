@@ -39,7 +39,7 @@ pip install tensorflow
 word embeddings generated are list of 768 dimensional embeddings for each word. <br>
 sentence embedding generated is 768 dimensional embedding which is average of each token.
 
-```
+```python
 from finbert_embedding.embedding import FinbertEmbedding
 
 text = "Another PSU bank, Punjab National Bank which also reported numbers managed to see a slight improvement in asset quality."
@@ -70,7 +70,7 @@ Namely, do not use: <br>
 Please consider the following instead: <br>
   if cosine(A, B) > cosine(A, C), then A is more similar to B than C.
 
-```
+```python
 from finbert_embedding.embedding import FinbertEmbedding
 
 text = "After stealing money from the bank vault, the bank robber was seen fishing on the Mississippi river bank."
