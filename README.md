@@ -22,7 +22,7 @@ Instead of building and do fine-tuning for an end-to-end NLP model, You can dire
 pip install finbert-embedding==0.1.2
 ```
 
-Note: If you get error like below (common error with Tf): <br>
+Note: If you get error in installing TF like below while installing this package (common error with Tf): <br>
 
 Installing collected packages: wrapt, tensorflow <br> 
   Found existing installation: wrapt 1.10.11 <br>
@@ -44,7 +44,7 @@ from finbert_embedding.embedding import FinbertEmbedding
 
 text = "Another PSU bank, Punjab National Bank which also reported numbers managed to see a slight improvement in asset quality."
 
-# Class Initialization
+# Class Initialization (You can set default 'model_path=None' as your finetuned BERT model path while Initialization)
 finbert = FinbertEmbedding()
 
 word_embeddings = finbert.word_vector(text)
