@@ -88,7 +88,7 @@ print('Vector similarity for different meanings:  %.2f' % diff_bank)
 # Vector similarity for *different* bank meanings (bank robber & river bank):  0.64
 ```
 
-## Warning
+### Warning
 
 According to BERT author Jacob Devlin:
 ```I'm not sure what these vectors are, since BERT does not generate meaningful sentence vectors. It seems that this is is doing average pooling over the word tokens to get a sentence vector, but we never suggested that this will generate meaningful sentence representations. And even if they are decent representations when fed into a DNN trained for a downstream task, it doesn't mean that they will be meaningful in terms of cosine distance. (Since cosine distance is a linear space where all dimensions are weighted equally).```
