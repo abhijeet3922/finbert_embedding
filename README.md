@@ -19,10 +19,10 @@ Instead of building and do fine-tuning for an end-to-end NLP model, You can dire
 (Recommended to create a conda env to have isolation and avoid dependency clashes)
 
 ```
-pip install finbert-embedding==0.1.2
+pip install finbert-embedding==0.1.4
 ```
 
-Note: If you get error in installing TF like below while installing this package (common error with Tf): <br>
+Note: If you get error in installing this package (common error with Tf): <br>
 
 Installing collected packages: wrapt, tensorflow <br>
   Found existing installation: wrapt 1.10.11 <br>
@@ -31,7 +31,7 @@ ERROR: Cannot uninstall 'wrapt'. It is a distutils installed project....
 then, just do this:
 ```
 pip install wrapt --upgrade --ignore-installed
-pip install tensorflow
+pip install finbert-embedding==0.1.4
 ```
 
 ## Usage 1
