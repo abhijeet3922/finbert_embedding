@@ -1,5 +1,5 @@
 # finbert_embedding
-Token and sentence level embeddings from FinBERT model (Financial Domain)
+Token and sentence level embeddings from FinBERT model (Financial Domain).
 
 [BERT](https://arxiv.org/abs/1810.04805), published by Google, is conceptually simple and empirically powerful as it obtained state-of-the-art results on eleven natural language processing tasks.  
 
