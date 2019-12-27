@@ -1,12 +1,13 @@
 # finbert_embedding
-Token and sentence level embeddings from FinBERT model (Finance Domain)
+Token and sentence level embeddings from FinBERT model (Financial Domain)
 
-BERT, published by Google, is conceptually simple and empirically powerful. It obtained new state-of-the-art results on eleven natural language processing tasks. 
+[BERT](https://arxiv.org/abs/1810.04805), published by Google, is conceptually simple and empirically powerful as it obtained state-of-the-art results on eleven natural language processing tasks.  
 
-The objective of this project is to obtain the word or sentence embeddings from FinBERT's pre-trained model by Dogu Tan Araci (University of Amsterdam).
+The objective of this project is to obtain the word or sentence embeddings from FinBERT, pre-trained model by Dogu Tan Araci (University of Amsterdam). FinBERT, which is a BERT language model further trained on Financial news articles for adapting financial domain. It achieved the state-of-the-art on FiQA sentiment scoring and Financial PhraseBank dataset. Paper [here](https://arxiv.org/abs/1908.10063).
+
 Instead of building and do fine-tuning for an end-to-end NLP model, You can directly utilize word embeddings from Financial BERT to build NLP models for various downstream tasks eg. Financial text classification, Text clustering, Extractive summarization or Entity extraction etc.
 
-FinBERT, which is a language model based on BERT for financial NLP tasks. It achieved the state-of-the-art on FiQA sentiment scoring and Financial PhraseBank. Paper here.
+
 
 ## Features
 * Creates an abstraction to remove dealing with inferencing pre-trained FinBERT model.
@@ -20,14 +21,16 @@ FinBERT, which is a language model based on BERT for financial NLP tasks. It ach
 ```
 pip install finbert-embedding==0.1.2
 ```
-
-Note: If you get error like below (Common error with Tf)
-Installing collected packages: wrapt, tensorflow
+<br>
+Note: If you get error like below (common error with Tf)<br>
+```
+Installing collected packages: wrapt, tensorflow 
   Found existing installation: wrapt 1.10.11
 ERROR: Cannot uninstall 'wrapt'. It is a distutils installed project....
 
 pip install wrapt --upgrade --ignore-installed
 pip install tensorflow
+```
 
 ## Usage 1
 
@@ -59,10 +62,10 @@ print("Shape of Sentence Embedding = ",len(sentence_embedding))
 
 A decent representation for a downstream task doesn't mean that it will be meaningful in terms of cosine distance. Since cosine distance is a linear space where all dimensions are weighted equally. if you want to use cosine distance anyway, then please focus on the rank not the absolute value.
 
-Namely, do not use:
+Namely, do not use:<br\>
   if cosine(A, B) > 0.9, then A and B are similar
 
-Please consider the following instead:
+Please consider the following instead:<br\>
   if cosine(A, B) > cosine(A, C), then A is more similar to B than C.
 
 ```
@@ -86,7 +89,7 @@ print('Vector similarity for different meanings:  %.2f' % diff_bank)
 ## Warning
 
 According to BERT author Jacob Devlin:
-"""I'm not sure what these vectors are, since BERT does not generate meaningful sentence vectors. It seems that this is is doing average pooling over the word tokens to get a sentence vector, but we never suggested that this will generate meaningful sentence representations. And even if they are decent representations when fed into a DNN trained for a downstream task, it doesn't mean that they will be meaningful in terms of cosine distance. (Since cosine distance is a linear space where all dimensions are weighted equally)."""
+```I'm not sure what these vectors are, since BERT does not generate meaningful sentence vectors. It seems that this is is doing average pooling over the word tokens to get a sentence vector, but we never suggested that this will generate meaningful sentence representations. And even if they are decent representations when fed into a DNN trained for a downstream task, it doesn't mean that they will be meaningful in terms of cosine distance. (Since cosine distance is a linear space where all dimensions are weighted equally).```
 
 Word/Sentence Embeddings gives great results in training downstream application like sentiment classification or text/document classification.
 
