@@ -22,18 +22,21 @@ Instead of building and do fine-tuning for an end-to-end NLP model, You can dire
 pip install finbert-embedding==0.1.2
 ```
 
-Note: If you get error like below (common error with Tf)<br>
+Note: If you get error like below (common error with Tf): <br>
 
-Installing collected packages: wrapt, tensorflow 
-  Found existing installation: wrapt 1.10.11
+Installing collected packages: wrapt, tensorflow <br> 
+  Found existing installation: wrapt 1.10.11 <br>
 ERROR: Cannot uninstall 'wrapt'. It is a distutils installed project....
 
+then, just do this:
+```
 pip install wrapt --upgrade --ignore-installed
 pip install tensorflow
+```
 
 ## Usage 1
 
-word embeddings generated are list of 768 dimensional embeddings for each word.
+word embeddings generated are list of 768 dimensional embeddings for each word. <br>
 sentence embedding generated is 768 dimensional embedding which is average of each token.
 
 ```
@@ -61,10 +64,10 @@ print("Shape of Sentence Embedding = ",len(sentence_embedding))
 
 A decent representation for a downstream task doesn't mean that it will be meaningful in terms of cosine distance. Since cosine distance is a linear space where all dimensions are weighted equally. if you want to use cosine distance anyway, then please focus on the rank not the absolute value.
 
-Namely, do not use:<br\>
+Namely, do not use: <br>
   if cosine(A, B) > 0.9, then A and B are similar
 
-Please consider the following instead:<br\>
+Please consider the following instead: <br>
   if cosine(A, B) > cosine(A, C), then A is more similar to B than C.
 
 ```
