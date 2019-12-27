@@ -95,13 +95,13 @@ According to BERT author Jacob Devlin:
 
 However, with the [CLS] token, it does become meaningful if the model has been fine-tuned, where the last hidden layer of this token is used as the “sentence vector” for downstream sequence classification task. This package encode sentence in similar manner.   
 
-## To Do (Next Version)
+### To Do (Next Version)
 
 * Extend it to give word embeddings for a paragram/Document (Currently, it takes one sentence as input). Chunkize your paragraph or text document into sentences using Spacy or NLTK before using finbert_embedding.
 * Adding batch processing feature.
 * More ways of handing OOVs (Currently, uses average of all tokens of a OOV word)
 * Ingesting and extending it to more pre-trained financial models.
 
-## Future Goal
+### Future Goal
 
 * Create generic downstream framework using various FinBERT language model for any financial labelled text classifcation task like sentiment classification, Financial news classification, Financial Document classification.
