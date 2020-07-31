@@ -39,9 +39,8 @@ class FinbertEmbedding(object):
 
     def process_text(self, text):
 
-        marked_text = "[CLS] " + text + " [SEP]"
-        # Tokenize our sentence with the BERT tokenizer.
-        tokenized_text = self.tokenizer.tokenize(marked_text)
+        tokenized_text = ['[CLS]'] + self.tokenizer.tokenize(text)[:510] + ['[SEP]']
+        # Tokenize our sentence with the BERT tokenizer
         return tokenized_text
 
 
