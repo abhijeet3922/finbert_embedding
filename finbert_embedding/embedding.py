@@ -23,18 +23,26 @@ class FinbertEmbedding(object):
             pre-trained BERT model
     """
 
-    def __init__(self, model_path=None):
+    def __init__(self, model_path=None, device='cpu'):
+
+        assert device in {'cpu', 'cuda'}, "device should be either 'cuda' or 'cpu'"
+        if device == 'cuda' and (not torch.cuda.is_available()):
+            device = 'cpu'
+        
+        logger.info(f"Using Device = {device} !!")
+        self.torch_device = torch.device(device)
 
         if model_path is not None:
             self.model_path = model_path
         else:
             self.model_path = downloader.get_Finbert('dropbox')
 
+        
         self.tokens = ""
         self.sentence_tokens = ""
         self.tokenizer = BertTokenizer.from_pretrained(self.model_path)
         # Load pre-trained model (weights)
-        self.model = BertModel.from_pretrained(self.model_path)
+        self.model = BertModel.from_pretrained(self.model_path).to(self.torch_device)
         logger.info("Initialization Done !!")
 
     def process_text(self, text):
@@ -77,6 +85,8 @@ class FinbertEmbedding(object):
         self.model.eval()
         # Predict hidden states features for each layer
         with torch.no_grad():
+            tokens_tensor = tokens_tensor.to(self.torch_device)
+            segments_tensors = segments_tensors.to(self.torch_device)
             encoded_layers, _ = self.model(tokens_tensor, segments_tensors)
 
         return encoded_layers
