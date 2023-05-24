@@ -25,7 +25,7 @@ class FinbertEmbedding(object):
 
     def __init__(self, model_path=None, device='cpu'):
 
-        assert device in {'cpu', 'cuda'}, "device sould be either 'cuda' or 'cpu'"
+        assert device in {'cpu', 'cuda'}, "device should be either 'cuda' or 'cpu'"
         if device == 'cuda' and (not torch.cuda.is_available()):
             device = 'cpu'
         
